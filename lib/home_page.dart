@@ -88,15 +88,15 @@ class _HomePageState extends State<HomePage> {
     for (int i = 0; i < environment.length; i++) {
       if (environment[i] == 0) {
         emptyPosition = i;
-        break;
+        return;
       }
     }
   }
 
   void _moveBlock(int index) {
     environment[emptyPosition] = environment[index];
-    emptyPosition = index;
     environment[index] = 0;
+    emptyPosition = index;
 
     setState(() {});
   }
